@@ -17,7 +17,7 @@ export class InMemoryQuestionsRepository implements QuestionsRepository {
   }
 
   async delete(question: Question): Promise<void> {
-    const itemIdex = this.items.findIndex((item) => item.id === question.id)
-    this.items.splice(itemIdex, 1)
+    const itemIndex = this.items.findIndex((item) => item.id === question.id)
+    this.items.splice(itemIndex, 1)
   }
 }
