@@ -9,7 +9,7 @@ interface QuestionProps {
   title: string
   slug: Slug
   content: string
-  authorId: string
+  authorId: UniqueEntityID
   createdAt: Date
   updatedAt?: Date
 }
@@ -69,7 +69,7 @@ export class Question extends Entity<QuestionProps> {
 
   static create(
     props: Optional<QuestionProps, 'createdAt' | 'slug'>,
-    id: UniqueEntityID,
+    id?: UniqueEntityID,
   ): Question {
     const question = new Question(
       {
