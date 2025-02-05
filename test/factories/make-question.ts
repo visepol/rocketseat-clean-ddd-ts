@@ -1,8 +1,11 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
-import { Question } from '@/domain/forum/enterprise/entities/question'
+import {
+  QuestionProps,
+  Question,
+} from '@/domain/forum/enterprise/entities/question'
 import { Slug } from '@/domain/forum/enterprise/entities/values-objects/slug'
 
-export function makeQuestion(overide: Partial<Question>) {
+export function makeQuestion(overide: Partial<QuestionProps> = {}) {
   const question = Question.create({
     title: 'Nova Pergunta',
     authorId: new UniqueEntityID('123'),
