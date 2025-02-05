@@ -4,15 +4,22 @@ import {
   Question,
 } from '@/domain/forum/enterprise/entities/question'
 import { Slug } from '@/domain/forum/enterprise/entities/values-objects/slug'
+import { faker } from '@faker-js/faker'
 
-export function makeQuestion(overide: Partial<QuestionProps> = {}) {
-  const question = Question.create({
-    title: 'Nova Pergunta',
-    authorId: new UniqueEntityID('123'),
-    content: 'Conteúdo da pergunta',
-    slug: Slug.create('nova-pergunta'),
-    ...overide,
-  })
+export function makeQuestion(
+  overide: Partial<QuestionProps> = {},
+  id?: UniqueEntityID,
+) {
+  const question = Question.create(
+    {
+      title: faker.lorem.sentences(),
+      authorId: new UniqueEntityID('123'),
+      content: faker.lorem.text(),
+      slug: Slug.create('nova-pergunta'),
+      ...overide,
+    },
+    id,
+  )
 
   return question
 }
