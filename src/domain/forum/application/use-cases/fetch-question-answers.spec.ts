@@ -40,7 +40,10 @@ describe('Fetch Question Answers', () => {
       )
     }
 
-    const { answers } = await sut.execute({ questionId: 'question-1', page: 2 })
+    const { answers } = await sut.execute({
+      questionId: 'question-id-1',
+      page: 2,
+    })
     expect(answers).toHaveLength(2)
   })
 })

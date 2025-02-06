@@ -26,7 +26,7 @@ describe('Edit Question', () => {
       authorId: 'author-id',
       title: 'new-title',
       content: 'new-content',
-      questionId: new UniqueEntityID('question-id').toString(),
+      questionId: 'question-id',
     })
 
     expect(inMemoryQuestionsRepository.items[0]).toMatchObject({
