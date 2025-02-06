@@ -11,6 +11,10 @@ export interface AnswerProps {
 }
 
 export class Answer extends Entity<AnswerProps> {
+  set content(content: string) {
+    this.props.content = content
+  }
+
   get content() {
     return this.props.content
   }
