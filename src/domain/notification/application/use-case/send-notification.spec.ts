@@ -13,8 +13,8 @@ describe('Send Notification', () => {
   it('should be able to create a notification', async () => {
     const result = await sut.execute({
       recipientId: '123',
-      title: 'Nova Pergunta',
-      content: 'Conteúdo da pergunta',
+      title: 'Nova Notificação',
+      content: 'Conteúdo da notificação',
     })
 
     expect(result.isRight()).toBeTruthy()
