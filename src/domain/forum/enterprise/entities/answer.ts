@@ -65,7 +65,7 @@ export class Answer extends AggregateRoot<AnswerProps> {
       id,
     )
 
-    const isNewAnswer = !id
+    const isNewAnswer = !id // why is he checking if the id is not present? see commit on original repo
     if (isNewAnswer) answer.addDomainEvent(new AnswerCreatedEvent(answer))
 
     return answer
